@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Item{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Details Items</i>
+        </div>
+        <div class="panel-body">
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Numeroitem</th>
+                <td>{{ item.numeroitem }}</td>
+            </tr>
+            <tr>
+                <th>Descriptionitem</th>
+                <td>{{ item.descriptionitem }}</td>
+            </tr>
+            <tr>
+                <th>Qteitem</th>
+                <td>{{ item.qteitem }}</td>
+            </tr>
+            <tr>
+                <th>Croitem</th>
+                <td>{{ item.croitem }}</td>
+            </tr>
+            <tr>
+                <th>Prixventeitem</th>
+                <td>{{ item.prixventeitem }}</td>
+            </tr>
+            <tr>
+                <th>Margecvitem</th>
+                <td>{{ item.margecvitem }}</td>
+            </tr>
+            <tr>
+                <th>Nbsectionneuritem</th>
+                <td>{{ item.nbsectionneuritem }}</td>
+            </tr>
+            <tr>
+                <th>Nbisoitem</th>
+                <td>{{ item.nbisoitem }}</td>
+            </tr>
+            <tr>
+                <th>Nbcaissonitem</th>
+                <td>{{ item.nbcaissonitem }}</td>
+            </tr>
+            <tr>
+                <th>Nbcomitem</th>
+                <td>{{ item.nbcomitem }}</td>
+            </tr>
+            <tr>
+                <th>Nbaccessitem</th>
+                <td>{{ item.nbaccessitem }}</td>
+            </tr>
+            <tr>
+                <th>Nbtringlerieitem</th>
+                <td>{{ item.nbtringlerieitem }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('item_index') }}">back to list</a>
+
+    <a href="{{ path('item_edit', {'id': item.id}) }}">edit</a>
+
+    {{ include('item/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+{% endblock %}

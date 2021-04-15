@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Item{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Creer un nouveau Item</i>
+        </div>
+        <div class="panel-body">
+
+    <h1>Creer nouveau Item</h1>
+
+    {{ include('item/_form.html.twig') }}
+
+    <a href="{{ path('item_index') }}">back to list</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

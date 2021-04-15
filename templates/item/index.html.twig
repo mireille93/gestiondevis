@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Item index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu">Items </i>
+        </div>
+        <div class="panel-body">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <a href="{{ path('item_index', {'id_devvi': item.id_devvi}) }}"class="btn btn-outline-warning">Liste Items par devis</a>
+            {{ form_end(form) }}
+
+            <a href="{{ path('item_new') }}">Create new</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numeroitem</th>
+                <th>Descriptionitem</th>
+                <th>Qteitem</th>
+                <th>Croitem</th>
+                <th>Prixventeitem</th>
+                <th>Margecvitem</th>
+                <th>Nbsectionneuritem</th>
+                <th>Nbisoitem</th>
+                <th>Nbcaissonitem</th>
+                <th>Nbcomitem</th>
+                <th>Nbaccessitem</th>
+                <th>Nbtringlerieitem</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.numeroitem }}</td>
+                <td>{{ item.descriptionitem }}</td>
+                <td>{{ item.qteitem }}</td>
+                <td>{{ item.croitem }}</td>
+                <td>{{ item.prixventeitem }}</td>
+                <td>{{ item.margecvitem }}</td>
+                <td>{{ item.nbsectionneuritem }}</td>
+                <td>{{ item.nbisoitem }}</td>
+                <td>{{ item.nbcaissonitem }}</td>
+                <td>{{ item.nbcomitem }}</td>
+                <td>{{ item.nbaccessitem }}</td>
+                <td>{{ item.nbtringlerieitem }}</td>
+                <td>
+                    <a href="{{ path('item_show', {'id': item.id}) }}">show</a>
+                    <a href="{{ path('item_edit', {'id': item.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

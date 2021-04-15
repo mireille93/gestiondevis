@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Tringlerie{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Nouvelle Tringlerie</i>
+        </div>
+        <div class="panel-body">
+
+    {{ include('tringlerie/_form.html.twig') }}
+
+    <a href="{{ path('tringlerie_index') }}">back to list</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

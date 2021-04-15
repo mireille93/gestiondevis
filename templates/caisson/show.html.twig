@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Caisson{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu">Caisson Details</i>
+        </div>
+        <div class="panel-body">
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Fonction</th>
+                <td>{{ caisson.fonctioncss }}</td>
+            </tr>
+            <tr>
+                <th>CRO</th>
+                <td>{{ caisson.crocss }}</td>
+            </tr>
+            <tr>
+                <th>Type de Sectionneur</th>
+                <td>{{ caisson.disctypecss }}</td>
+            </tr>
+            <tr>
+                <th>Rupture Brusque</th>
+                <td>{{ caisson.rbcss }}</td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td>{{ caisson.positioncss }}</td>
+            </tr>
+            <tr>
+                <th>Position pole</th>
+                <td>{{ caisson.positionpolecss }}</td>
+            </tr>
+            <tr>
+                <th>Type de phase</th>
+                <td>{{ caisson.typephasecss }}</td>
+            </tr>
+            <tr>
+                <th>Norme</th>
+                <td>{{ caisson.normecss }}</td>
+            </tr>
+            <tr>
+                <th>Type materiau</th>
+                <td>{{ caisson.typemateriaucss }}</td>
+            </tr>
+            <tr>
+                <th>Epaisseur peinture</th>
+                <td>{{ caisson.eppeintcss }}</td>
+            </tr>
+            <tr>
+                <th>Type raccordement</th>
+                <td>{{ caisson.typercdrmcss }}</td>
+            </tr>
+            <tr>
+                <th>Hublot infra rouge</th>
+                <td>{{ caisson.hublotinfrarcss }}</td>
+            </tr>
+            <tr>
+                <th>Epaisseur materiau</th>
+                <td>{{ caisson.epmateriaucss }}</td>
+            </tr>
+            <tr>
+                <th>Eclairage</th>
+                <td>{{ caisson.eclairagecss }}</td>
+            </tr>
+            <tr>
+                <th>Chauffage</th>
+                <td>{{ caisson.chauffagecss }}</td>
+            </tr>
+            <tr>
+                <th>Type peinture</th>
+                <td>{{ caisson.typepeintcss }}</td>
+            </tr>
+            <tr>
+                <th>Plan d'encombrement</th>
+                <td>{{ caisson.assblydrwnbcss }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('caisson_index') }}">back to list</a>
+
+    <a href="{{ path('caisson_edit', {'id': caisson.id}) }}" class="btn btn-success">edit</a>
+
+    {{ include('caisson/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+{% endblock %}

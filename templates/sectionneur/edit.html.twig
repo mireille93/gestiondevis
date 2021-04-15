@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Editer Sectionneur #' ~ sectionneur.id %}
+
+{% block body %}
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+        <i class="icon_menu" > Nouveau Sectionneur</i>
+    </div>
+    <div class="panel-body">
+    <h1> Modifier Sectionneur </h1>
+    {{ form_start (form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Modifier" class="btn btn-primary btn-block">
+    {{ form_end (form) }}
+    </div>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Commandeur{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Editer le Commandeur</i>
+        </div>
+        <div class="panel-body">
+
+    {{ include('commandeur/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('commandeur_index') }}">Retourner</a>
+
+    {{ include('commandeur/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+{% endblock %}

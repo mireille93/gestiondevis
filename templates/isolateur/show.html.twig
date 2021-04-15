@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Isolateur{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu" > Detail Isolateur</i>
+        </div>
+        <div class="panel-body">
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Num article origine</th>
+                <td>{{ isolateur.numarticleorigiso }}</td>
+            </tr>
+            <tr>
+                <th>Matiere</th>
+                <td>{{ isolateur.matiereiso }}</td>
+            </tr>
+            <tr>
+                <th>Marche</th>
+                <td>{{ isolateur.marcheiso }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ isolateur.designationiso }}</td>
+            </tr>
+            <tr>
+                <th>Classe effort</th>
+                <td>{{ isolateur.classeeffortiso }}</td>
+            </tr>
+            <tr>
+                <th>Niveau d’isolement</th>
+                <td>{{ isolateur.biliso }}</td>
+            </tr>
+            <tr>
+                <th>Classe de pollution</th>
+                <td>{{ isolateur.cliso }}</td>
+            </tr>
+            <tr>
+                <th>CRO</th>
+                <td>{{ isolateur.crosio }}</td>
+            </tr>
+            <tr>
+                <th>Ligne de fuite</th>
+                <td>{{ isolateur.lfiso }}</td>
+            </tr>
+            <tr>
+                <th>Couleur</th>
+                <td>{{ isolateur.couleuriso }}</td>
+            </tr>
+            <tr>
+                <th>Homologation</th>
+                <td>{{ isolateur.homologationiso }}</td>
+            </tr>
+            <tr>
+                <th>Fix bas</th>
+                <td>{{ isolateur.fixbasiso }}</td>
+            </tr>
+            <tr>
+                <th>Fix haut</th>
+                <td>{{ isolateur.fixhautiso }}</td>
+            </tr>
+            <tr>
+                <th>Fournisseurs</th>
+                <td>{{ isolateur.frsiso }}</td>
+            </tr>
+            <tr>
+                <th>Dimension ailette</th>
+                <td>{{ isolateur.dimailetiso }}</td>
+            </tr>
+            <tr>
+                <th>Poids</th>
+                <td>{{ isolateur.poidsiso }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('isolateur_index') }}">back to list</a>
+
+    <a href="{{ path('isolateur_edit', {'id': isolateur.id}) }}"class="btn btn-success">edit</a>
+
+    {{ include('isolateur/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+{% endblock %}

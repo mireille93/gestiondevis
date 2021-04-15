@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Isolateur{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu" > Nouveau Isolateur</i>
+        </div>
+        <div class="panel-body">
+
+    {{ include('isolateur/_form.html.twig') }}
+
+    <a href="{{ path('isolateur_index') }}">back to list</a>
+{% endblock %}

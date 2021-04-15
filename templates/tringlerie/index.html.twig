@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tringlerie index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu">Liste des Caissons</i>
+        </div>
+        <div class="panel-body">
+
+    <table class="table">
+        <a href="{{ path('tringlerie_new') }}">Creer un nouvelle tringlerie</a>
+        <thead>
+            <tr>
+                <th>Designation</th>
+                <th>Type tringlerie</th>
+                <th>CRO</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tringlerie in tringleries %}
+            <tr>
+                <td>{{ tringlerie.designation }}</td>
+                <td>{{ tringlerie.typetringlerie }}</td>
+                <td>{{ tringlerie.cro }}</td>
+                <td>
+                    <a href="{{ path('tringlerie_show', {'id': tringlerie.id}) }}" class="btn btn-dark">show</a>
+                    <a href="{{ path('tringlerie_edit', {'id': tringlerie.id}) }}"class="btn btn-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

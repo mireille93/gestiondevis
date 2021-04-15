@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clients{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Liste des Clients</i>
+        </div>
+        <div class="panel-body">
+    <a href="{{ path('clients_new') }}">Creer un nouveau client</a>
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Rue</th>
+                <th>Ville</th>
+                <th>Code postal</th>
+                <th>Contact</th>
+                <th>Telephone</th>
+                <th>Mail</th>
+                <th>Site web</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.nomcli }}</td>
+                <td>{{ client.ruecli }}</td>
+                <td>{{ client.villecli }}</td>
+                <td>{{ client.codepostalcli }}</td>
+                <td>{{ client.contactcli }}</td>
+                <td>{{ client.telephonecli }}</td>
+                <td>{{ client.mailcli }}</td>
+                <td>{{ client.sitewebcli }}</td>
+                <td>
+                    <a href="{{ path('clients_show', {'id': client.id}) }}" class="btn btn-outline-primary">show</a>
+                </td>
+                <td>
+                    <a href="{{ path('clients_edit', {'id': client.id}) }}" class="btn btn-outline-primary">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

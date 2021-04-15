@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Caisson index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Liste des Caissons</i>
+        </div>
+        <div class="panel-body">
+
+    <table class="table">
+        <a href="{{ path('caisson_new') }}">Creer une nouvelle caisson</a>
+        <thead>
+            <tr>
+                <th>Fonction</th>
+                <th>Cro</th>
+                <th>Type de sectionneur</th>
+                <th>Rupture Brusque</th>
+                <th>Position</th>
+                <th>Position pole</th>
+                <th>Type phase</th>
+                <th>Norme</th>
+                <th>Type materiau</th>
+                <th>Epaisseur peinture</th>
+                <th>Type de raccordement</th>
+                <th>Hublot infra rouge</th>
+                <th>Epaisseur materiau</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for caisson in caissons %}
+            <tr>
+                <td>{{ caisson.fonctioncss }}</td>
+                <td>{{ caisson.crocss }}</td>
+                <td>{{ caisson.disctypecss }}</td>
+                <td>{{ caisson.rbcss }}</td>
+                <td>{{ caisson.positioncss }}</td>
+                <td>{{ caisson.positionpolecss }}</td>
+                <td>{{ caisson.typephasecss }}</td>
+                <td>{{ caisson.normecss }}</td>
+                <td>{{ caisson.typemateriaucss }}</td>
+                <td>{{ caisson.eppeintcss }}</td>
+                <td>{{ caisson.typercdrmcss }}</td>
+                <td>{{ caisson.hublotinfrarcss }}</td>
+                <td>{{ caisson.epmateriaucss }}</td>
+                <td>
+                    <a href="{{ path('caisson_show', {'id': caisson.id}) }}" class="btn btn-outline-dark">show</a>
+                </td>
+                <td>
+                    <a href="{{ path('caisson_edit', {'id': caisson.id}) }}"class="btn btn-outline-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="19">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandeur{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Detail Commandeur</i>
+        </div>
+        <div class="panel-body">
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Type Commandeur</th>
+                <td>{{ commandeur.typecom }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ commandeur.designationcom }}</td>
+            </tr>
+            <tr>
+                <th>CRO</th>
+                <td>{{ commandeur.crocom }}</td>
+            </tr>
+            <tr>
+                <th>Couple manœuvre</th>
+                <td>{{ commandeur.couplemancom }}</td>
+            </tr>
+            <tr>
+                <th>Verrouillage position ser</th>
+                <td>{{ commandeur.verpositsercom }}</td>
+            </tr>
+            <tr>
+                <th>Norme</th>
+                <td>{{ commandeur.normecom }}</td>
+            </tr>
+            <tr>
+                <th>Materiel homologué</th>
+                <td>{{ commandeur.materielhomcom }}</td>
+            </tr>
+            <tr>
+                <th>Plage de température admissible</th>
+                <td>{{ commandeur.plagetempadmcom }}</td>
+            </tr>
+            <tr>
+                <th>Seconde chauffe</th>
+                <td>{{ commandeur.scndechofcom }}</td>
+            </tr>
+            <tr>
+                <th>Nombre contact auxiliaires</th>
+                <td>{{ commandeur.nbcontactauxcom }}</td>
+            </tr>
+            <tr>
+                <th>Classe contact auxiliaires</th>
+                <td>{{ commandeur.clscontactauxcom }}</td>
+            </tr>
+            <tr>
+                <th>Relais additionnel</th>
+                <td>{{ commandeur.relaisadcom }}</td>
+            </tr>
+            <tr>
+                <th>Resistance anti condensation</th>
+                <td>{{ commandeur.rstceanticondcom }}</td>
+            </tr>
+            <tr>
+                <th>Verrouillage electrique special</th>
+                <td>{{ commandeur.verelspcom }}</td>
+            </tr>
+            <tr>
+                <th>Eclairage</th>
+                <td>{{ commandeur.eclairagecom }}</td>
+            </tr>
+            <tr>
+                <th>Adjonction</th>
+                <td>{{ commandeur.adjonctioncom }}</td>
+            </tr>
+            <tr>
+                <th>Prise de courant</th>
+                <td>{{ commandeur.prsecourtcom }}</td>
+            </tr>
+            <tr>
+                <th>Disjoncteur resistance</th>
+                <td>{{ commandeur.mcbrstcecom }}</td>
+            </tr>
+            <tr>
+                <th>Disjoncteur controle</th>
+                <td>{{ commandeur.mcbctrlcom }}</td>
+            </tr>
+            <tr>
+                <th>Mesure du couple</th>
+                <td>{{ commandeur.storquecom }}</td>
+            </tr>
+            <tr>
+                <th>Lampe couleur</th>
+                <td>{{ commandeur.sluxcom }}</td>
+            </tr>
+            <tr>
+                <th>Module de communication lan</th>
+                <td>{{ commandeur.scomlancom }}</td>
+            </tr>
+            <tr>
+                <th>Module de communication wan</th>
+                <td>{{ commandeur.scomwancom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('commandeur_index') }}">Retourner</a>
+
+    <a href="{{ path('commandeur_edit', {'id': commandeur.id}) }}"class="btn btn-success">edit</a>
+
+    {{ include('commandeur/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

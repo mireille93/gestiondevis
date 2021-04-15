@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Isolateurs {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu" > Isolateurs</i>
+        </div>
+        <div class="panel-body">
+    <a href="{{ path('isolateur_new') }}">Nouveau Isolateur</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Num article origine</th>
+                <th>Matiere </th>
+                <th>Marche</th>
+                <th>Designation</th>
+                <th>Classe effort</th>
+                <th>Niveau d’isolement</th>
+                <th>Classe de pollution</th>
+                <th>Cro</th>
+                <th>Ligne de fuite</th>
+                <th>Couleur</th>
+                <th>Homologation</th>
+                <th>Fix bas</th>
+                <th>Fix haut</th>
+                <th>Fournisseurs</th>
+                <th>Dimailet</th>
+                <th>Poids</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for isolateur in isolateurs %}
+            <tr>
+                <td>{{ isolateur.numarticleorigiso }}</td>
+                <td>{{ isolateur.matiereiso }}</td>
+                <td>{{ isolateur.marcheiso }}</td>
+                <td>{{ isolateur.designationiso }}</td>
+                <td>{{ isolateur.classeeffortiso }}</td>
+                <td>{{ isolateur.biliso }}</td>
+                <td>{{ isolateur.cliso }}</td>
+                <td>{{ isolateur.crosio }}</td>
+                <td>{{ isolateur.lfiso }}</td>
+                <td>{{ isolateur.couleuriso }}</td>
+                <td>{{ isolateur.homologationiso }}</td>
+                <td>{{ isolateur.fixbasiso }}</td>
+                <td>{{ isolateur.fixhautiso }}</td>
+                <td>{{ isolateur.frsiso }}</td>
+                <td>{{ isolateur.dimailetiso }}</td>
+                <td>{{ isolateur.poidsiso }}</td>
+                <td>
+                    <a href="{{ path('isolateur_show', {'id': isolateur.id}) }}" class="btn btn-info">show</a>
+                </td>
+                <td>
+                    <a href="{{ path('isolateur_edit', {'id': isolateur.id}) }}" class="btn btn-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

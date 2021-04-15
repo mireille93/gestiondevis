@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Commandeur{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu">Commandeurs</i>
+        </div>
+        <div class="panel-body">
+
+    {{ include('commandeur/_form.html.twig') }}
+
+    <a href="{{ path('commandeur_index') }}">Retourner</a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

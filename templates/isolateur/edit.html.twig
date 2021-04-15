@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Isolateur{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu" > Editer Isolateur</i>
+        </div>
+        <div class="panel-body">
+
+    {{ include('isolateur/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('isolateur_index') }}">Retourner à la liste</a>
+
+    {{ include('isolateur/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+{% endblock %}

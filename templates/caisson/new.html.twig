@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Caisson{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <i class="icon_menu"> Nouvelle Caisson</i>
+    </div>
+    <div class="panel-body">
+
+
+    {{ include('caisson/_form.html.twig') }}
+
+    <a href="{{ path('caisson_index') }}">back to list</a>
+    </div>
+</div>
+    </div>
+{% endblock %}

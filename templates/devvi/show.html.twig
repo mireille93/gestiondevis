@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}devis{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Detail devis</i>
+        </div>
+        <div class="panel-body">
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Description Devis</th>
+                <td>{{ devvi.descriptiondev }}</td>
+            </tr>
+            <tr>
+                <th>Date de demande</th>
+                <td>{{ devvi.datedemande ? devvi.datedemande|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date enregistrement</th>
+                <td>{{ devvi.dateenregdev ? devvi.dateenregdev|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Cout de Transport</th>
+                <td>{{ devvi.transportdev }}</td>
+            </tr>
+            <tr>
+                <th>Commisions agent</th>
+                <td>{{ devvi.commisionsagentdev }}</td>
+            </tr>
+            <tr>
+                <th>Cout Emballage</th>
+                <td>{{ devvi.emballagedev }}</td>
+            </tr>
+            <tr>
+                <th>Cout Essais</th>
+                <td>{{ devvi.essaisdev }}</td>
+            </tr>
+            <tr>
+                <th>Etudes</th>
+                <td>{{ devvi.etudesdev }}</td>
+            </tr>
+            <tr>
+                <th>Frais fiscaux</th>
+                <td>{{ devvi.fraisfiscauxdev }}</td>
+            </tr>
+            <tr>
+                <th>Crototal</th>
+                <td>{{ devvi.crototaldev }}</td>
+            </tr>
+            <tr>
+                <th>Coutactivite</th>
+                <td>{{ devvi.coutactivitedev }}</td>
+            </tr>
+            <tr>
+                <th>Remise</th>
+                <td>{{ devvi.remisedev }}</td>
+            </tr>
+            <tr>
+                <th>Cout final vente</th>
+                <td>{{ devvi.coutfinalventedev }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('devvi_index') }}">back to list</a>
+
+    <a href="{{ path('devvi_edit', {'id': devvi.id}) }}"class="btn btn-success">edit</a>
+
+    {{ include('devvi/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+{% endblock %}

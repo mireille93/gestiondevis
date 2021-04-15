@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SectionneurController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu" > Liste des Sectionneurs</i>
+        </div>
+        <div class="panel-body">
+    <a href="{{ path('sectionneur_create') }}">Nouveau Sectionneur</a>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Designation</th>
+        <th>Cout</th>
+        <th>Type</th>
+        <th>Tension</th>
+        <th>Courant</th>
+        <th>ICC</th>
+        <th>TK</th>
+        <th>MALT</th>
+        <th>Type raccordement</th>
+        <th>Epaisseur G</th>
+        <th>Classe coupe</th>
+        <th>Pouvoir Fermeture icc</th>
+        <th>Fermeture Brusque</th>
+        <th>Rupture Brusque</th>
+        <th>Transfert Bar</th>
+        <th>End mec</th>
+        <th>Norme</th>
+        <th>Annexe</th>
+        <th>Nb isolateur</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for sectionneur in sectionneurs %}
+        <tr>
+                    <td>{{ sectionneur.designationsec }}</td>
+                    <td>{{ sectionneur.crosec }}</td>
+                    <td>{{ sectionneur.typesec }}</td>
+                    <td>{{ sectionneur.tensionsec }}</td>
+                    <td>{{ sectionneur.courantsec }}</td>
+                    <td>{{ sectionneur.iccsec }}</td>
+                    <td>{{ sectionneur.tksec }}</td>
+                    <td>{{ sectionneur.malt }}</td>
+                    <td>{{ sectionneur.typeraccordsec }}</td>
+                    <td>{{ sectionneur.epglacesec }}</td>
+                    <td>{{ sectionneur.classecoupsec }}</td>
+                    <td>{{ sectionneur.pfermiccsec }}</td>
+                    <td>{{ sectionneur.fbsec }}</td>
+                    <td>{{ sectionneur.rbsec }}</td>
+                    <td>{{ sectionneur.transfertbarsec }}</td>
+                    <td>{{ sectionneur.endmecsec }}</td>
+                    <td>{{ sectionneur.normesec }}</td>
+                    <td>{{ sectionneur.annexecsec }}</td>
+                    <td>{{ sectionneur.nbisolateursec }}</td>
+                    <td>
+                        <a href="{{ path('sectionneur_edit', {id: sectionneur.id}) }}" class="btn btn-success">Modif</a>
+                    </td>
+                    <td>
+                        <a href="#" onclick="event.preventDefault(); confirm('Etes-vous sur de supprimer ce sectionneur de la liste?') && document.getElementById('js-delete-sec').submit();" class="btn btn-danger">Supp</a>
+                    </td>
+                </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="18">no records found</td>
+                    </tr>
+    </tbody>
+    </table>
+
+        <form id="js-delete-sec" action="{{ path('sectionneur_delete',{id:sectionneur.id }) }}" method="get" >
+            <input type="hidden" name="csrf_token" value="{{ csrf_token('sectionneur_delete_') ~ sectionneur.id}}">
+            <input type="hidden" name="_method" value=""Supprimer>
+        </form>
+    {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Devis{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Creer un devis</i>
+        </div>
+        <div class="panel-body">
+
+    {{ include('devvi/_form.html.twig') }}
+
+    <a href="{{ path('devvi_index') }}">Retourner</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

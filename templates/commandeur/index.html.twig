@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandeurs{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Nouveau Commandeur</i>
+        </div>
+        <div class="panel-body">
+    <a href="{{ path('commandeur_new') }}">Nouveau Commandeur</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Designation</th>
+                <th>Cro</th>
+                <th>Coupleman</th>
+                <th>Verouillage positions par serrure</th>
+                <th>Norme</th>
+                <th>Materiel homologué</th>
+                <th>Plage temperature admissible</th>
+                <th>Seconde chauffe</th>
+                <th>Nombre contact aux</th>
+                <th>Classe contact aux</th>
+                <th>Relais additionnel</th>
+                <th>Eclairage</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commandeur in commandeurs %}
+            <tr>
+                <td>{{ commandeur.typecom }}</td>
+                <td>{{ commandeur.designationcom }}</td>
+                <td>{{ commandeur.crocom }}</td>
+                <td>{{ commandeur.couplemancom }}</td>
+                <td>{{ commandeur.verpositsercom }}</td>
+                <td>{{ commandeur.normecom }}</td>
+                <td>{{ commandeur.materielhomcom }}</td>
+                <td>{{ commandeur.plagetempadmcom }}</td>
+                <td>{{ commandeur.scndechofcom }}</td>
+                <td>{{ commandeur.nbcontactauxcom }}</td>
+                <td>{{ commandeur.clscontactauxcom }}</td>
+                <td>{{ commandeur.relaisadcom }}</td>
+                <td>{{ commandeur.eclairagecom }}</td>
+                <td>
+                    <a href="{{ path('commandeur_show', {'id': commandeur.id}) }}" class="btn btn-success">show</a>
+                </td>
+                <td>
+                    <a href="{{ path('commandeur_edit', {'id': commandeur.id}) }}" class="btn btn-warning">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="25">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

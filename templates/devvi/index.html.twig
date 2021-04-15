@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block title %}Devis index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <i class="icon_menu"> Liste des Devis</i>
+        </div>
+        <div class="panel-body">
+    <a href="{{ path('devvi_new') }}">Creer un nouveau devis</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Date demande</th>
+                <th>Date enregistre</th>
+                <th>Transport</th>
+                <th>Commisions agent</th>
+                <th>Emballage</th>
+                <th>Essais</th>
+                <th>Etudes</th>
+                <th>Frais fiscaux</th>
+                <th>Cro total</th>
+                <th>Cout activite</th>
+                <th>Remise</th>
+                <th>Cout final vente</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for devvi in devvis %}
+            <tr>
+                <td>{{ devvi.descriptiondev }}</td>
+                <td>{{ devvi.datedemande ? devvi.datedemande|date('Y-m-d') : '' }}</td>
+                <td>{{ devvi.dateenregdev ? devvi.dateenregdev|date('Y-m-d') : '' }}</td>
+                <td>{{ devvi.transportdev }}</td>
+                <td>{{ devvi.commisionsagentdev }}</td>
+                <td>{{ devvi.emballagedev }}</td>
+                <td>{{ devvi.essaisdev }}</td>
+                <td>{{ devvi.etudesdev }}</td>
+                <td>{{ devvi.fraisfiscauxdev }}</td>
+                <td>{{ devvi.crototaldev }}</td>
+                <td>{{ devvi.coutactivitedev }}</td>
+                <td>{{ devvi.remisedev }}</td>
+                <td>{{ devvi.coutfinalventedev }}</td>
+                <td>
+                    <a href="{{ path('devvi_show', {'id': devvi.id}) }}" class="btn btn-outline-primary">show</a>
+                </td>
+                <td>
+                    <a href="{{ path('devvi_edit', {'id': devvi.id}) }}"class="btn btn-outline-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+</div>
+ {% endblock %}
